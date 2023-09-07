@@ -16,21 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="hKU-Kp-tHc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hKU-Kp-tHc" userLabel="bg">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.3.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vS4-kn-ebg">
-                                <rect key="frame" x="76.666666666666686" y="308" width="240" height="236.66666666666674"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.3.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vS4-kn-ebg" userLabel="imgLogo">
+                                <rect key="frame" x="78.666666666666671" y="308" width="235.66666666666663" height="236.66666666666674"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="0kw-Oz-CaT"/>
                                     <constraint firstAttribute="height" constant="240" id="YTO-OX-wiS"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="People" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csc-QD-4Go">
-                                <rect key="frame" x="175" y="554" width="53" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Csc-QD-4Go">
+                                <rect key="frame" x="116.66666666666667" y="556" width="159.66666666666663" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Csc-QD-4Go" secondAttribute="height" multiplier="3:1" id="4zN-k4-vbu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -38,22 +39,28 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vS4-kn-ebg" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9uT-eW-nhS"/>
+                            <constraint firstItem="Csc-QD-4Go" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.07" id="IJU-CW-eCq"/>
                             <constraint firstItem="vS4-kn-ebg" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="M9a-wu-rfy"/>
                             <constraint firstAttribute="bottom" secondItem="hKU-Kp-tHc" secondAttribute="bottom" id="MDI-3a-Cwn"/>
+                            <constraint firstItem="vS4-kn-ebg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XW3-Ne-JdN"/>
+                            <constraint firstItem="Csc-QD-4Go" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="e6L-RX-WsC"/>
+                            <constraint firstItem="vS4-kn-ebg" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.6" id="gDO-Vq-tTy"/>
                             <constraint firstItem="vS4-kn-ebg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jee-qc-Qrl"/>
                             <constraint firstItem="hKU-Kp-tHc" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="kNM-Cc-qw6"/>
                             <constraint firstItem="hKU-Kp-tHc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mqh-yp-bSa"/>
+                            <constraint firstItem="Csc-QD-4Go" firstAttribute="top" secondItem="vS4-kn-ebg" secondAttribute="bottom" constant="10" id="th9-Ah-GqQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hKU-Kp-tHc" secondAttribute="trailing" id="wYa-Kn-Kvw"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
         </scene>
     </scenes>
     <resources>
-        <image name="launchScreen" width="810" height="1440"/>
+        <image name="appBg.jpg" width="1687" height="2999"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
