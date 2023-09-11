@@ -19,7 +19,7 @@ class HomeVC: BaseVC {
         FirebaseAuthModel.signout { success, msg in
             if !success{
                 print("Error signing out: \(msg)")
-                self.showAlertDialog(title: "Error", message: msg)
+                self.dismiss(animated: true)
             }else{
                 dismiss(animated: true)
             }

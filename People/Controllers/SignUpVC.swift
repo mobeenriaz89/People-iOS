@@ -25,6 +25,7 @@ class SignUpVC: BaseVC {
                     print("msg")
                     self.showAlertDialog(title: "Error", message: msg)
                 }else{
+                    self.dismiss(animated: false)
                     self.performSegue(withIdentifier: "registerToHome", sender: self)
                 }
             }

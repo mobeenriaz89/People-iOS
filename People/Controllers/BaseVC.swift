@@ -8,6 +8,8 @@
 import UIKit
 class BaseVC: UIViewController {
     
+    var spinner: UIActivityIndicatorView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "AppBG.pdf")!)
@@ -22,5 +24,16 @@ class BaseVC: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-
+    func showSpinner(){
+        spinner = UIActivityIndicatorView(style: .medium)
+        spinner!.center = view.center
+        spinner?.layer.zPosition = 1    
+        spinner!.startAnimating()
+        view.addSubview(spinner!)
+    }
+    
+    func hideSpinner(){
+        spinner?.stopAnimating()
+        spinner?.removeFromSuperview()
+    }
 }

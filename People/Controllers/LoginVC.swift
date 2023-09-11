@@ -18,12 +18,15 @@ class LoginVC: BaseVC {
     }
     
     @IBAction func didTapLogin(_ sender: Any) {
+        showSpinner()
         if let email = tfEmail.text, let password = tfPassword.text{
             //Autheticating user with Firebase Authentication
             FirebaseAuthModel.login(email: email, password: password) { isSuccess, msg in
+                self.hideSpinner()
                 if !isSuccess{
                     self.showAlertDialog(title: "Error", message: msg)
                 }else{
+                    self.dismiss(animated: false)
                     self.performSegue(withIdentifier: "loginToHome", sender: self)
                 }
             }
