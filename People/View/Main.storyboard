@@ -40,7 +40,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="Zov-R0-4HN" kind="show" id="HzW-8R-tRe"/>
+                                            <segue destination="Zov-R0-4HN" kind="show" id="dzN-pE-7fA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNj-Od-nTr" userLabel="login" customClass="CustomButton" customModule="People" customModuleProvider="target">
@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
         </scene>
-        <!--BaseVC-->
+        <!--Sign UpVC-->
         <scene sceneID="oET-JS-guz">
             <objects>
-                <viewController id="OyF-H4-P4j" customClass="BaseVC" customModule="People" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OyF-H4-P4j" customClass="SignUpVC" customModule="People" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4vH-Mp-iqI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,6 +108,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="forward.end.circle.fill" catalog="system"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapRegister:" destination="OyF-H4-P4j" eventType="touchUpInside" id="ALc-AJ-E4Q"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dfl-LU-SFC">
                                 <rect key="frame" x="32" y="252" width="256" height="128"/>
@@ -148,6 +151,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" style="editor" id="3lo-qs-dR9"/>
+                    <connections>
+                        <outlet property="tfConfirmPassword" destination="MmK-Bb-4Nc" id="f1s-fh-5jY"/>
+                        <outlet property="tfEmail" destination="lIg-NZ-NY0" id="sef-lt-zEt"/>
+                        <outlet property="tfPassword" destination="dLf-WE-LRB" id="4pj-Hr-ZE9"/>
+                        <segue destination="o7S-Xk-My8" kind="show" identifier="registerToHome" id="k7V-Tn-e7c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AAI-4o-SQp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -171,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
-        <!--BaseVC-->
+        <!--LoginVC-->
         <scene sceneID="3hv-GI-or5">
             <objects>
-                <viewController id="Zov-R0-4HN" customClass="BaseVC" customModule="People" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zov-R0-4HN" customClass="LoginVC" customModule="People" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SZk-nu-xXh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,6 +220,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="play.circle.fill" catalog="system"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapLogin:" destination="Zov-R0-4HN" eventType="touchUpInside" id="SLR-sT-CHE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ghT-mg-Oy4"/>
@@ -229,18 +241,68 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" style="editor" id="PLW-WP-DbD"/>
+                    <connections>
+                        <outlet property="tfEmail" destination="cK2-eq-n7D" id="YxK-NM-hQZ"/>
+                        <outlet property="tfPassword" destination="4OJ-eF-XJU" id="MFI-Ns-KeX"/>
+                        <segue destination="o7S-Xk-My8" kind="show" identifier="loginToHome" id="xOR-Zv-pJg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJ6-bI-ggK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2524" y="-27"/>
         </scene>
+        <!--HomeVC-->
+        <scene sceneID="9Mo-CK-ygf">
+            <objects>
+                <viewController id="o7S-Xk-My8" customClass="HomeVC" customModule="People" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H11-N6-Fth">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95X-lU-2mC">
+                                <rect key="frame" x="124.5" y="305.5" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIH-0D-Pxe">
+                                <rect key="frame" x="20" y="513" width="280" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign out"/>
+                                <connections>
+                                    <action selector="didTapSignout:" destination="o7S-Xk-My8" eventType="touchUpInside" id="kFH-CL-syL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FU9-P0-TCh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FU9-P0-TCh" firstAttribute="bottom" secondItem="lIH-0D-Pxe" secondAttribute="bottom" constant="20" id="7cW-0C-qHs"/>
+                            <constraint firstItem="FU9-P0-TCh" firstAttribute="trailing" secondItem="lIH-0D-Pxe" secondAttribute="trailing" constant="20" id="Q4w-0K-N4b"/>
+                            <constraint firstItem="lIH-0D-Pxe" firstAttribute="leading" secondItem="FU9-P0-TCh" secondAttribute="leading" constant="20" id="eYM-bJ-YO1"/>
+                            <constraint firstItem="95X-lU-2mC" firstAttribute="centerX" secondItem="FU9-P0-TCh" secondAttribute="centerX" id="nzN-CJ-8U3"/>
+                            <constraint firstItem="95X-lU-2mC" firstAttribute="centerY" secondItem="FU9-P0-TCh" secondAttribute="centerY" id="o50-iw-XBi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Q6g-8n-uOg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MvZ-sZ-vJm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2138" y="774"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xOR-Zv-pJg"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="forward.end.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.badge.key" catalog="system" width="128" height="116"/>
         <image name="person.crop.circle.fill.badge.plus" catalog="system" width="128" height="114"/>
         <image name="play.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
