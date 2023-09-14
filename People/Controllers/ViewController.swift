@@ -11,9 +11,13 @@ class ViewController: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        if AppDefaults.isLoggedIn(){
+            self.dismiss(animated: false)
+            self.performSegue(withIdentifier: "mainToHome", sender: self)
+        }
     }
 
+    
 
 }
 

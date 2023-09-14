@@ -37,10 +37,10 @@ struct FirebaseAuthModel {
         }
     }
     
-    static func signout(completion: (Bool, String) -> Void){
+    static func signout(completion: (Bool, String?) -> Void){
         do{
             try Auth.auth().signOut()
-            
+            completion(true, nil)
         }catch {
             print("Error signing out: \(error)")
             completion(false, error.localizedDescription)
